@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="zodiacApp">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="js/angular.js"></script>
-    <script src="js/zodiac.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="js/angular.js"></script>
+  <script src="js/zodiac.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
 
 </head>
+
 <body>
-<div class="container" ng-controller="ZodiacCtrl">
+  <div class="container" ng-controller="ZodiacCtrl">
 
     <div class="text-center">
-        <h4>Signs: {{list.length}}</h4>
-        <div class="row">
-            <div class="btn-group btn-group-lg">
-                <button type="button" class="btn btn-success" ng-click="showTable()">Table</button>
-                <button type="button" class="btn btn-warning" ng-click="showList()">List</button>
-                <button type="button" class="btn btn-danger"  ng-click="showCrcl()">Circle</button>
-            </div>
+      <h4>Signs: {{list.length}}</h4>
+      <div class="row">
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-success" ng-click="showTable()">Table</button>
+          <button type="button" class="btn btn-warning" ng-click="showList()">List</button>
+          <button type="button" class="btn btn-danger" ng-click="showCrcl()">Circle</button>
         </div>
+      </div>
     </div>
     <div ng-show="zList">
-    <div class="row text-center vcenter" ng-repeat="sign in list">
+      <div class="row text-center vcenter" ng-repeat="sign in list">
         <div class="col-xs-3"></div>
         <div class="col-xs-2"><img src={{sign.image}} alt={{sign.name}}></div>
         <div class="col-xs-4 text-left">
-            <div class="row">
-                <div class="col-md-6"><h4>{{sign.name}} ({{sign.ruName}})</h4></div>
+          <div class="row">
+            <div class="col-md-6">
+              <h4>{{sign.name}} ({{sign.ruName}})</h4></div>
             <!--</div>-->
             <!--<div class="row">-->
-                <div class="col-md-12">{{sign.period}}</div>
-            </div>
+            <div class="col-md-12">{{sign.period}}</div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-<div ng-show="zTable">
-<div class="row">
-    <div class="col-xs-4 text-center tbl" ng-repeat="sign in list"><img src={{sign.image}} alt={{sign.name}}></div>
+    <div ng-show="zTable">
+      <div class="row">
+        <div class="col-xs-4 text-center tbl" ng-repeat="sign in list"><img src={{sign.image}} alt={{sign.name}}></div>
 
-   </div>
-</div>
+      </div>
+    </div>
     <div ng-show="zCrcl">
-        <div class="circle_signs text-center col-xs-12" ng-repeat="sign in list"><img src={{sign.image}} alt={{sign.name}}></div>
+      <div class="circle_signs text-center col-xs-12" ng-repeat="sign in list"><img src={{sign.image}} alt={{sign.name}} ng-hover="show_big()"></div>
 
 
-    <script>
-
-
-    </script>
-</div></div>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+      <script>
+      </script>
+    </div>
+  </div>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
