@@ -23,14 +23,14 @@
         </div>
     </div>
     <div ng-show="zList">
-    <div class="row text-center" ng-repeat="sign in list">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-2"><img src={{sign.image}} alt={{sign.name}}></div>
-        <div class="col-sm-4 text-left">
+    <div class="row text-center vcenter" ng-repeat="sign in list">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-2"><img src={{sign.image}} alt={{sign.name}}></div>
+        <div class="col-xs-4 text-left">
             <div class="row">
-                <div class="col-md-12"><h3>{{sign.name}} ({{sign.ruName}})</h3></div>
-            </div>
-            <div class="row">
+                <div class="col-md-6"><h4>{{sign.name}} ({{sign.ruName}})</h4></div>
+            <!--</div>-->
+            <!--<div class="row">-->
                 <div class="col-md-12">{{sign.period}}</div>
             </div>
         </div>
@@ -43,8 +43,14 @@
    </div>
 </div>
     <div ng-show="zCrcl">
-        <h1>Circle will be here</h1></div>
-</div>
+        <div class="circle_signs text-center col-xs-12" ng-repeat="sign in list"><img src={{sign.image}} alt={{sign.name}}></div>
+
+
+    <script>
+
+
+    </script>
+</div></div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 

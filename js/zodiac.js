@@ -71,7 +71,7 @@ zodiacApp.controller("ZodiacCtrl", function ($scope) {
     $scope.zList = false;
     $scope.zTable = false;
     $scope.zCrcl = false;
-    
+
     $scope.showList = function () {
         $scope.zList = true;
         $scope.zTable = false;
@@ -85,19 +85,25 @@ zodiacApp.controller("ZodiacCtrl", function ($scope) {
     $scope.showCrcl = function () {
         $scope.zList = false;
         $scope.zTable = false;
+
+        $scope.divs = document.getElementsByClassName("circle_signs");
+        var ln  = $scope.divs.length;
+        var delta = Math.PI * 2 / ln;
+        var x = 0, y = 320, angle = 0;
+
+        for (var i = 0; i < ln; i++) {
+            $scope.divs[i].style.position = 'absolute';
+            $scope.divs[i].style.left =  180 * Math.cos(angle) + x + 'px';
+            $scope.divs[i].style.top = 180 * Math.sin(angle) + y + 'px';
+
+            angle += delta;
+        }
+
         $scope.zCrcl = true;
     };
+
+
 });
 
 
-var divs = document.getElementsByTagName('div');
-var delta = Math.PI * 2 / divs.length;
-var x = 0, y = 0, angle = 0;
 
-for (var i = 0; i < divs.length; i++) {
-    divs[i].style.position = 'absolute';
-    divs[i].style.left =  100 * Math.cos(angle) + 'px';
-    divs[i].style.top = 100 * Math.sin(angle) + 'px';
-
-    angle += delta;
-}
